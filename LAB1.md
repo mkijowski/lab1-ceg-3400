@@ -93,12 +93,12 @@ example:`printf "4Beasley's" | sha256sum" gives a hash of
 `00086d4b4f3d736a7dae792feb96377be57d8812ac0ae1e34d51d0f9eaf7a8b7` which would
 be considered a 3 "point" coin since it begins with three `0`'s.
 
-* nonces can be 2 or more digits
+* nonces can be 2 or more digits (non decimel integers only)
 * words must come from an english dictionary and may include punctuation such as
   `'`
 * **you may NOT submit any of the example nonce/word combos!**
 
-Submit your mining code in the `/miner` folder and sumbit ** ONLY ONE** of the following:
+Submit your mining code in the `/miner` folder and sumbit **ONLY ONE** of the following:
 
 * 3 different `000` point hashes with their respective nonce and word. For
   example:
@@ -118,7 +118,15 @@ OR
   00003704b9de4d3f71e9581f3501c041e690fc99c9f98e151c1f2f4978545893  - - 75Bridgeport's
   ```
 
-BONUS (+1 quiz point): Submit a `00000` (5) point hash.
+**Attention**  For grading purposes, put your nonce and word combos in the `coins.txt` file WIHTOUT the hash, one per line like so:
 
+##### Example `coins.txt` file:
+```
+75Bridgeport's
+23Australopithecus's
+54Australian
+```
+
+BONUS (+1 quiz point): Submit a `00000` (5) point hash.
 
 
