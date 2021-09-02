@@ -96,10 +96,12 @@ like above.  Name the file `nonce-data.csv`.
 My local cyber security hero Farmer Joe (fictional) created his own
 cryptocurrency named Kentucky Fried Crypto (no relation to the restauraunt).
 
-To earn KFC Coins you simply need to Hash a nonce and a word from the linux user
-dictionary (typically `/usr/share/dict/american-english`) using `sha256sum` and
-look for a number of leading `0`s.  More `0`s == more points.  For
-example:`printf "4Beasley's" | sha256sum"` gives a hash of
+To earn KFC Coins you simply need to hash a nonce and a word from an english
+dictionary (typically `/usr/share/dict/american-english`, I have also provided a
+simple dictionary you can expand on in `data/dictionary`) using `sha256sum` and
+look for a number of leading `0`s.  More `0`s == more points.  
+
+For example:`printf "4Beasley's" | sha256sum"` gives a hash of
 `00086d4b4f3d736a7dae792feb96377be57d8812ac0ae1e34d51d0f9eaf7a8b7` which would
 be considered a 3 "point" coin since it begins with three `0`'s.  
 
@@ -110,7 +112,8 @@ Some rules:
   `'`
 * **you may NOT submit any of the example nonce/word combos!**
 
-Submit your mining code in the `/miner` folder and sumbit **ONLY ONE** of the following:
+Submit your mining code in the `/miner` folder.  Submit nonce+word combos to the 
+`coins.txt` file for **ONLY ONE** of the following:
 
 * 3 different `000` point hashes with their respective nonce and word. For
   example:
@@ -131,6 +134,13 @@ OR
   ```
 
 **Attention**  For grading purposes, put your nonce and word combos in the `coins.txt` file WIHTOUT the hash, one per line like so:
+
+Hint 1: you can output all of the words in a dictionary using a for loop in bash like so
+```bash
+for i in $(cat data/dictionary); do
+  printf $i
+done
+```
 
 ##### Example `coins.txt` file:
 ```
