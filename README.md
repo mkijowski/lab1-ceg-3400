@@ -4,37 +4,47 @@
 
 ### Task 1: Hashing
 
+**Reminder Deliverable:** Is your `salted-data.csv` in this repository?
+
 Answer the following in this file:
 
-* Did you create `salted-data.csv` in the root of this repo?
 * How many unique users are in the data?
 * How many salts did you create?
 * How many possible combinations will I need to try to figure out the secret ID
   of all students (assume I know all potential secret IDs)
 * Instead of salts, if you were to use a nonce (unique number for each hashed
   field) how many possible combinations would I need to try?
+* Given the above, if this quiz data were *actual* class data, say for example
+  your final exam, how would you store this dataset?  Why?
 
+```bash
+please put any cool bash one-liners or other piped commands you
+learned/struggled with for task 1 here
+```
 
 ---
 
 ### Task 2: Crypto Mining
 
+**Reminder Deliverable:** Is your "mining" code in this repository (`mining/`)?
+**Reminder Deliverable:** Is your nonce + word combos in `coins.txt`?
+
 Answer the following:
 
-* Did you put any scripts/code used for "mining" in the `mining/` folder?
-* Did you put the nonce and word in the `coins.txt` file as well?
-
-Choose one of the following and paste your nonce+word(s) and hash(s)
-* 3 different `000` point hashes with their respective nonce and word.
+* Paste your nonce+word(s) and hash(s) below ( either 3x `000` hashes or 1x `0000`
+hash)
 ```
 
 ```
 
-OR
+* What did you think about Task 2?
+* Is there a better way than brute force to attempt to get higher valued coins?
+* Why or why not?
 
-* a single `0000` point hash with respective nonce and word.
-```
 
+```bash
+please put any cool bash one-liners or other piped commands you
+learned/struggled with for task 2 here
 ```
 
 ---
@@ -47,4 +57,8 @@ OR
 
 ---
 
+```bash
+please put any cool bash one-liners or other piped commands you
+learned/struggled with for task 3 here
+```
 

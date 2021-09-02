@@ -32,6 +32,16 @@ Students should become familiar with the following:
 
 #### Preparation
 
+This should be a simple lab that only requires some basic Bash scripting, so all
+you should need is access to Bash.  I have provided an AWS instance just in
+case.
+
+I have provided helpful bash hints and tips but it is up to you to fully
+implement the requirements.
+
+If you find a method OTHER than Bash to perform any of these tasks document it
+in `README.md`!
+
 ##### AWS
 
 If you plan on using the AWS virtual space you will need to setup your AWS
@@ -66,6 +76,7 @@ Required software:
 * sed
 
 ---
+---
 
 ### Task 1: Hashing
 
@@ -86,10 +97,22 @@ related questions in `README.md`.
   of all students (assume I know all potential secret IDs)
 * Instead of salts, if you were to use a nonce (unique number for each hashed
   field) how many possible combinations would I need to try?
+* Given the above, if this quiz data were *actual* class data, say for example
+  your final exam, how would you store this dataset?  Why?
 
 BONUS (+1 quiz point): nonce and hash the secret ID (5 digit nonce) of each line, store the nonce beside the hash
 like above.  Name the file `nonce-data.csv`.
 
+Hints:
+* ```bash
+cat quiz_data.csv | awk -F ',' '{ print $1}'
+```
+* `.csv` files can be imported to and exported from excel or other spreadsheet
+  application
+* you can manually check a hash with `printf 1234MKijowski | sha256sum`
+
+
+---
 ---
 
 ### Task 2: Crypto Mine
@@ -113,6 +136,7 @@ Some rules:
   `'`
 * **you may NOT submit any of the example nonce/word combos!**
 
+---
 Submit your mining code in the `/miner` folder.  Submit nonce+word combos to the 
 `coins.txt` file for **ONLY ONE** of the following:
 
@@ -133,6 +157,7 @@ OR
   ```
   00003704b9de4d3f71e9581f3501c041e690fc99c9f98e151c1f2f4978545893  - 75Bridgeport's
   ```
+---
 
 **Attention**  For grading purposes, put your nonce and word combos in the `coins.txt` file WIHTOUT the hash, one per line like so:
 
@@ -150,9 +175,9 @@ for i in $(cat data/dictionary); do
 done
 ```
 
-
 BONUS (+1 quiz point): Submit a `00000` (5) point hash.
 
+---
 ---
 
 ### Task 3: Symmetric Encryption
@@ -189,3 +214,4 @@ the original image and each other.  Write your finding in `README.md`
 
 ---
 
+Be sure to asnwer all the question in `README.md`!
