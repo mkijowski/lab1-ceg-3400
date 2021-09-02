@@ -9,7 +9,6 @@ Table of contents:
 * [Task 1: Hashing](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#task-1-hashing)
 * [Task 2: Crypto Mine](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#task-2-crypto-mine)
 * [Task 3: Symmetric Encryption](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#task-3-symmetric-encryption)
-* [Task 4: Asymmetric Encryption]()
 
 ---
 
@@ -28,7 +27,6 @@ Students should become familiar with the following:
 * salt
 * nonce
 * symmetric encryption
-* asymmetric encryption
 
 ---
 
@@ -63,6 +61,7 @@ Required software:
 * sha256sum
 * awk
 * grep
+* sed
 
 ---
 
@@ -187,10 +186,4 @@ Once you have done this with all three files open them in an image viewer and co
 the original image and each other.  Write your finding in `README.md`
 
 ---
-
-### Task 4:
-
-
----
-
 
