@@ -39,10 +39,12 @@ Educate account and perform the following actions.
 
 * From AWS Educate classroom access the CEG3400 course *AWS Console* (make sure
   you are signed in as a vocstartsoft user in the top right)
-* Create an SSH public/private key pair for this course (`.pem` NOT putty!)
-* Click [this cloudformation link](google.com) to deploy your stack
-* Identify the IP address of the EC2 instance created [in the EC2
-  page](google.com)
+* [Create an SSH public/private key
+  pair](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#KeyPairs:) for this course (`.pem` NOT putty!)
+* Click [this cloudformation link](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=ceg3400Lab1&templateURL=https:%2F%2Fwsu-cecs-cf-templates.s3.us-east-2.amazonaws.com%2Fcourse-templates%2Fceg3400-mek.yml)
+  to deploy your stack
+* Identify the IP address of the running EC2 instance created [in the EC2
+  page](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1)
 * Connect with the following string: `ssh -i /path/to/keyfile ubuntu@<IP
   ADDRESS>` 
 
