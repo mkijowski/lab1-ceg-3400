@@ -135,6 +135,13 @@ OR
 
 **Attention**  For grading purposes, put your nonce and word combos in the `coins.txt` file WIHTOUT the hash, one per line like so:
 
+Example `coins.txt` file:
+```
+75Bridgeport's
+23Australopithecus's
+54Australian
+```
+
 Hint 1: you can output all of the words in a dictionary using a for loop in bash like so
 ```bash
 for i in $(cat data/dictionary); do
@@ -142,12 +149,6 @@ for i in $(cat data/dictionary); do
 done
 ```
 
-##### Example `coins.txt` file:
-```
-75Bridgeport's
-23Australopithecus's
-54Australian
-```
 
 BONUS (+1 quiz point): Submit a `00000` (5) point hash.
 
