@@ -101,7 +101,7 @@ dictionary (typically `/usr/share/dict/american-english`, I have also provided a
 simple dictionary you can expand on in `data/dictionary`) using `sha256sum` and
 look for a number of leading `0`s.  More `0`s == more points.  
 
-For example:`printf "4Beasley's" | sha256sum"` gives a hash of
+For example:`printf "4Beasley's" | sha256sum` gives a hash of
 `00086d4b4f3d736a7dae792feb96377be57d8812ac0ae1e34d51d0f9eaf7a8b7` which would
 be considered a 3 "point" coin since it begins with three `0`'s.  
 
