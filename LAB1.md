@@ -3,12 +3,12 @@
 ### Cryptography
 
 Table of contents:
-* [Background]()
-* [Objectives]()
-* [Preparation]()
-* [Task 1: Hashing]()
-* [Task 2: Crypto Mine]()
-* [Task 3: Symmetric Encryption]()
+* [Background](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#background)
+* [Objectives](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#objectives)
+* [Preparation](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#preparation)
+* [Task 1: Hashing](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#task-1-hashing)
+* [Task 2: Crypto Mine](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#task-2-crypto-mine)
+* [Task 3: Symmetric Encryption](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#task-3-symmetric-encryption)
 * [Task 4: Asymmetric Encryption]()
 
 ---
