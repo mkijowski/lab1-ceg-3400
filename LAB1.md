@@ -7,6 +7,9 @@ Table of contents:
 * [Objectives]()
 * [Preparation]()
 * [Task 1: Hashing]()
+* [Task 2: Crypto Mine]()
+* [Task 3: Symmetric Encryption]()
+* [Task 4: Asymmetric Encryption]()
 
 ---
 
@@ -54,7 +57,12 @@ Needed sofware will be installed in AWS (hopefully) by default, if you are
 using something else it is up to you to support it or use AWS.
 
 Required software:
-
+* git
+* openssl
+* cat
+* sha256sum
+* awk
+* grep
 
 ---
 
@@ -81,6 +89,8 @@ related questions in `README.md`.
 BONUS (+1 quiz point): nonce and hash the secret ID (5 digit nonce) of each line, store the nonce beside the hash
 like above.  Name the file `nonce-data.csv`.
 
+---
+
 ### Task 2: Crypto Mine
 
 My local cyber security hero Farmer Joe (fictional) created his own
@@ -89,11 +99,13 @@ cryptocurrency named Kentucky Fried Crypto (no relation to the restauraunt).
 To earn KFC Coins you simply need to Hash a nonce and a word from the linux user
 dictionary (typically `/usr/share/dict/american-english`) using `sha256sum` and
 look for a number of leading `0`s.  More `0`s == more points.  For
-example:`printf "4Beasley's" | sha256sum" gives a hash of
+example:`printf "4Beasley's" | sha256sum"` gives a hash of
 `00086d4b4f3d736a7dae792feb96377be57d8812ac0ae1e34d51d0f9eaf7a8b7` which would
-be considered a 3 "point" coin since it begins with three `0`'s.
+be considered a 3 "point" coin since it begins with three `0`'s.  
 
-* nonces can be 2 or more digits (non decimel integers only)
+Some rules:
+
+* nonces can be 2 to 10 digits (positive integers only)
 * words must come from an english dictionary and may include punctuation such as
   `'`
 * **you may NOT submit any of the example nonce/word combos!**
@@ -104,9 +116,9 @@ Submit your mining code in the `/miner` folder and sumbit **ONLY ONE** of the fo
   example:
   
   ```
-  000c25558b4ac04450987eafd6bcf754572ef6ece08556b55e79f0a10d10d2ad  - - 23Australopithecus's
-  000bfea597d0613077be94766a963ad8e8c11fc2aafd92fe770dcf5e19619315  - - 54Australian
-  000e86ecc2b23dd1baff4044ed0780fffd83495933b168606f07ff7b60281d31  - - 101Accenture
+  000c25558b4ac04450987eafd6bcf754572ef6ece08556b55e79f0a10d10d2ad  - 23Australopithecus's
+  000bfea597d0613077be94766a963ad8e8c11fc2aafd92fe770dcf5e19619315  - 54Australian
+  000e86ecc2b23dd1baff4044ed0780fffd83495933b168606f07ff7b60281d31  - 101Accenture
   ```
 
 OR
@@ -115,7 +127,7 @@ OR
   nonce and word.  For example:
   
   ```
-  00003704b9de4d3f71e9581f3501c041e690fc99c9f98e151c1f2f4978545893  - - 75Bridgeport's
+  00003704b9de4d3f71e9581f3501c041e690fc99c9f98e151c1f2f4978545893  - 75Bridgeport's
   ```
 
 **Attention**  For grading purposes, put your nonce and word combos in the `coins.txt` file WIHTOUT the hash, one per line like so:
@@ -128,5 +140,46 @@ OR
 ```
 
 BONUS (+1 quiz point): Submit a `00000` (5) point hash.
+
+---
+
+### Task 3: Symmetric Encryption
+
+In this task you will encrypt a simple image using different encryption modes and analyze the 
+effectiveness of each mode.  A list of all the supported algorithms and modes are found in the
+`openssl` and `enc` man pages.
+
+Encrypt the `data/example_pic.bmp` file with the aes-128 algorithm using each of the following encryption modes 
+- `aes-128-cbc`, `aes-128-ecb`, and `aes-128-ofb` – total of 3 ciphertext files created.  Name the files `example_pic.cbc`, 
+`example_pic.ecb`, and `example_pic.ofb`.  Make up an easy to remember encryption password when 
+prompted (e.g. 12345).
+
+The general form of the encryption command is as follows:
+
+```
+openssl  <ALGORITHM_MODE>  -e  -in  <INPUT_FILE>   -out  <OUTPUT_FILE>
+```
+
+In order to view these files you will need to recreate the standard header format
+of a `.bmp` file before an image viewer will recognize the encrypted data as an image.
+
+This data is stored in the first 54 bytes of every `.bmp` file.  You can cut it out and 
+save it with the following command: `dd if=example_pic.bmp of=bmp_header.hex bs=1 count=54`
+but I did this already and provided the header data in `data/bmp_header.hex`.
+
+To prepend this to your cypher text simply use the cat command as follows:
+```
+cat data/bmp_header.hex ./example_pic.ofb > ofb.bmp
+```
+
+Once you have done this with all three files open them in an image viewer and compare them to
+the original image and each other.  Write your finding in `README.md`
+
+---
+
+### Task 4:
+
+
+---
 
 
