@@ -72,7 +72,7 @@ In class we discussed hashing a single column in a table of data to preserve
 privacy, but as we demonstrated a simple hash does little to preserve a students
 privacy if we know a little about the what identifier might be being used.
 
-I have provided the [`quiz-data.csv`](/data/quiz-data.csv) with all hashes
+I have provided the [`quiz_data.csv`](/data/quiz_data.csv) with all hashes
 removed.  Provide a unique 5 character/digit  salt for each user and using `printf` and `sha256sum`
 replace each secret identifier with a salted hashed value (include the salt as
 the first 5 characters of your hash!).  Store this file in
