@@ -104,7 +104,8 @@ BONUS (+1 quiz point): nonce and hash the secret ID (5 digit nonce) of each line
 like above.  Name the file `nonce-data.csv`.
 
 Hints:
-* ```bash
+* here is some sample code 
+```bash
 cat quiz_data.csv | awk -F ',' '{ print $1}'
 ```
 * `.csv` files can be imported to and exported from excel or other spreadsheet
