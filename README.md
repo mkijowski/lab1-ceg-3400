@@ -31,8 +31,9 @@ learned/struggled with for task 1 here
 
 Answer the following:
 
-* Paste your nonce+word(s) and hash(s) below ( either 3x `000` hashes or 1x `0000`
+* Paste your ***nonce+word(s) and hash(s)*** below ( either 3x `000` hashes or 1x `0000`
 hash)
+
 ```
 
 ```
@@ -45,20 +46,5 @@ hash)
 ```bash
 please put any cool bash one-liners or other piped commands you
 learned/struggled with for task 2 here
-```
-
----
-
-### Task 3: Symmetric Encryption
-
-* Desribe each image
-* Are you able to infer anything about the original image?
-* Why do you think this is?  Dig into the typed of each encryption algorithm and explain.
-
----
-
-```bash
-please put any cool bash one-liners or other piped commands you
-learned/struggled with for task 3 here
 ```
 
