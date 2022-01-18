@@ -8,14 +8,14 @@ Table of contents:
 * [Preparation](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#preparation)
 * [Task 1: Hashing](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#task-1-hashing)
 * [Task 2: Crypto Mine](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#task-2-crypto-mine)
-* [Task 3: Symmetric Encryption](https://github.com/mkijowski/lab1-ceg-3400/blob/master/LAB1.md#task-3-symmetric-encryption)
 
 ---
 
 #### Background
 
-As mentioned in class, hashing and encryption capabilites are two of the most
-significant tools available to sybersecurity professionals.  
+Cryptographic hashing is a fundamental tool in our arsenal.  Using it properly can help to 
+ensure the Confidentiality and Integrity of our data; however, if used improperly it might 
+as well not be used at all.
 
 ---
 
@@ -33,8 +33,7 @@ Students should become familiar with the following:
 #### Preparation
 
 This should be a simple lab that only requires some basic Bash scripting, so all
-you should need is access to Bash.  I have provided an AWS instance just in
-case.
+you should need is access to Bash.
 
 I have provided helpful bash hints and tips but it is up to you to fully
 implement the requirements.
@@ -42,33 +41,9 @@ implement the requirements.
 If you find a method OTHER than Bash to perform any of these tasks document it
 in `README.md`!
 
-##### AWS
-
-If you plan on using the AWS virtual space you will need to setup your AWS
-Educate account and perform the following actions.
-
-* From AWS Educate classroom access the CEG3400 course *AWS Console* (make sure
-  you are signed in as a vocstartsoft user in the top right)
-* [Create an SSH public/private key
-  pair](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#KeyPairs:) for this course (`.pem` NOT putty!)
-* Click [this cloudformation link](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=ceg3400Lab1&templateURL=https:%2F%2Fwsu-cecs-cf-templates.s3.us-east-2.amazonaws.com%2Fcourse-templates%2Fceg3400-mek.yml)
-  to deploy your stack
-* Identify the IP address of the running EC2 instance created [in the EC2
-  page](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1)
-* Connect with the following string: `ssh -i /path/to/keyfile ubuntu@<IP
-  ADDRESS>` 
-
-  for example: `ssh -i /home/mkijowski/Downloads/ceg3400.pem
-  ubuntu@123.245.246.247`
-
 ##### Required software
 
-Needed sofware will be installed in AWS (hopefully) by default, if you are
-using something else it is up to you to support it or use AWS.
-
-Required software:
 * git
-* openssl
 * cat
 * sha256sum
 * awk
@@ -104,7 +79,8 @@ BONUS (+1 quiz point): nonce and hash the secret ID (5 digit nonce) of each line
 like above.  Name the file `nonce-data.csv`.
 
 Hints:
-* here is some sample code 
+* here is some sample code
+
 ```bash
 cat quiz_data.csv | awk -F ',' '{ print $1}'
 ```
@@ -163,6 +139,7 @@ OR
 **Attention**  For grading purposes, put your nonce and word combos in the `coins.txt` file WIHTOUT the hash, one per line like so:
 
 Example `coins.txt` file:
+
 ```
 75Bridgeport's
 23Australopithecus's
@@ -170,6 +147,7 @@ Example `coins.txt` file:
 ```
 
 Hint 1: you can output all of the words in a dictionary using a for loop in bash like so
+
 ```bash
 for i in $(cat data/dictionary); do
   printf $i
@@ -178,41 +156,6 @@ done
 
 BONUS (+1 quiz point): Submit a `00000` (5) point hash.
 
----
----
-
-### Task 3: Symmetric Encryption
-
-In this task you will encrypt a simple image using different encryption modes and analyze the 
-effectiveness of each mode.  A list of all the supported algorithms and modes are found in the
-`openssl` and `enc` man pages.
-
-Encrypt the `data/example_pic.bmp` file with the aes-128 algorithm using each of the following encryption modes 
-- `aes-128-cbc`, `aes-128-ecb`, and `aes-128-ofb` – total of 3 ciphertext files created.  Name the files `example_pic.cbc`, 
-`example_pic.ecb`, and `example_pic.ofb`.  Make up an easy to remember encryption password when 
-prompted (e.g. 12345).
-
-The general form of the encryption command is as follows:
-
-```
-openssl  <ALGORITHM_MODE>  -e  -in  <INPUT_FILE>   -out  <OUTPUT_FILE>
-```
-
-In order to view these files you will need to recreate the standard header format
-of a `.bmp` file before an image viewer will recognize the encrypted data as an image.
-
-This data is stored in the first 54 bytes of every `.bmp` file.  You can cut it out and 
-save it with the following command: `dd if=example_pic.bmp of=bmp_header.hex bs=1 count=54`
-but I did this already and provided the header data in `data/bmp_header.hex`.
-
-To prepend this to your cypher text simply use the cat command as follows:
-```
-cat data/bmp_header.hex ./example_pic.ofb > ofb.bmp
-```
-
-Once you have done this with all three files open them in an image viewer and compare them to
-the original image and each other.  Write your finding in `README.md`
-
----
 
 Be sure to asnwer all the question in `README.md`!
+
