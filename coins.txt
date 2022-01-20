@@ -1,6 +1,4 @@
 ## Forbidden coins from examples
-## do not use these, please delete the contents fo this file
-## before adding your coins...
 # 75Bridgeport's
 # 23Australopithecus's
 # 54Australian
