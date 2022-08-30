@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# this file is ONLY provided as a reference for how mkijowski
+# strips the UID and W# from orig data and create finitlname secret ID
+# Only to be run by mkijowski and referenced by students for lab1
+
 TMPF=/tmp/secrets-removed.csv
 
 cat $1 | cut -d "," -f3- > $TMPF
