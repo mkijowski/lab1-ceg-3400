@@ -26,7 +26,6 @@ Students should become familiar with the following:
 * hashing
 * salt
 * nonce
-* symmetric encryption
 
 ---
 
