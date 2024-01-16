@@ -50,7 +50,6 @@ in `README.md`!
 * sed
 
 ---
----
 
 ### Task 1: Hashing
 
@@ -65,17 +64,25 @@ the first 5 characters of your hash!).  Store this file in
 the root of your repository with the name `salted-data.csv` and answer the
 related questions in `README.md`.
 
-* How many unique users are in the data?
-* How many salts did you create?
-* How many possible combinations will I need to try to figure out the secret ID
-  of all students (assume I know all potential secret IDs)
-* Instead of salts, if you were to use a nonce (unique number for each hashed
-  field) how many possible combinations would I need to try?
-* Given the above, if this quiz data were *actual* class data, say for example
-  your final exam, how would you store this dataset?  Why?
+Example:  If a line of the file begins with the following:
 
-BONUS (+1 quiz point): nonce and hash the secret ID (5 digit nonce) of each line, store the nonce beside the hash
-like above.  Name the file `nonce-data.csv`.
+```
+MKijowski, 1,1/11/2024 9:33 AM,1/11/2024 9:34 AM,,1,MC, ...<rest of line removed>...
+```
+
+Then you need to perform the following:
+
+1. Generate a salt for `MKijowski`, for example `12345`
+2. Prepend the salt to the name: `12345MKijowski`
+3. Hash the above: `printf 12345MKijowski | sha256sum` which becomes `0fcd00c7c47494fd11cb7e6bf79d6392ae59c81ddded146498736a3ea2ef54a1`
+4. Prepend the salt *again* to the resulting hash: `123450fcd00c7c47494fd11cb7e6bf79d6392ae59c81ddded146498736a3ea2ef54a1`
+5. Store the value from number 4 above in the original csv for all occurences of `MKijowski`
+
+```
+123450fcd00c7c47494fd11cb7e6bf79d6392ae59c81ddded146498736a3ea2ef54a1, 1,1/11/2024 9:33 AM,1/11/2024 9:34 AM,,1,MC, ...<rest of line removed>...
+```
+
+BONUS (+1 quiz point): nonce and hash the secret ID (5 digit nonce) of each line, store the nonce beside the hash like above.  Name the file `nonce-data.csv`.
 
 Hints:
 * here is some sample code
@@ -88,7 +95,6 @@ cat quiz_data.csv | awk -F ',' '{ print $1}'
 * you can manually check a hash with `printf 1234MKijowski | sha256sum`
 
 
----
 ---
 
 ### Task 2: Crypto Mine
