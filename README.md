@@ -39,7 +39,7 @@ hash)
 ```
 
 * How many words were in your dictionary?
-* How many nonce's did your code iterate over?
+* How many nonces did your code iterate over?
 * What was the maximum number of hashes your code *could* compute given the above?
 * What did you think about Task 2?
 * Is there a better way than brute force to attempt to get higher valued coins?
