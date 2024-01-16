@@ -1,4 +1,5 @@
-## Forbidden coins from examples
+## Forbidden coins from examples, delete ALL lines of this file and replace 
+## with your coin as below (do not begin lines with #).
 # 75Bridgeport's
 # 23Australopithecus's
 # 54Australian
