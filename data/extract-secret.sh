@@ -6,8 +6,9 @@
 
 TMPF=/tmp/secrets-removed.csv
 
-cat $1 | cut -d "," -f3- > $TMPF
+rm $TMPF
 
+cp $1 $TMPF
 
 awk -F "," '{print $1}' $TMPF | cut -c 1 > finit
 awk -F "," '{print $2}' $TMPF > lname
