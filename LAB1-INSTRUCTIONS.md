@@ -82,8 +82,6 @@ Then you need to perform the following:
 123450fcd00c7c47494fd11cb7e6bf79d6392ae59c81ddded146498736a3ea2ef54a1, 1,1/11/2024 9:33 AM,1/11/2024 9:34 AM,,1,MC, ...<rest of line removed>...
 ```
 
-BONUS (+1 quiz point): nonce and hash the secret ID (5 digit nonce) of each line, store the nonce beside the hash like above.  Name the file `nonce-data.csv`.
-
 Hints:
 * here is some sample code
 
@@ -159,8 +157,9 @@ for i in $(cat data/dictionary); do
 done
 ```
 
-BONUS (+1 quiz point): Submit a `00000` (5) point hash.
+BONUS (? points): Submit a `00000` (5) point hash.
 
+More BONUS: submit the highest value coin in this class.
 
 Be sure to asnwer all the question in `README.md`!
 
